@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestSyncAsync" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="88F-gM-er7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="peh-Oe-uFW">
+                                <rect key="frame" x="10.5" y="120.5" width="354" height="426"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKF-im-tDI">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
+                                        <state key="normal" title="1. Serial + async + 1Queue"/>
+                                        <connections>
+                                            <action selector="buttonSerialAsync1Queue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4VS-Vd-0Tw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4r-Ko-qWU">
+                                        <rect key="frame" x="0.0" y="33" width="185" height="30"/>
+                                        <state key="normal" title="2. Serial + async + 2Queue"/>
+                                        <connections>
+                                            <action selector="buttonSerialAsync2Queue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cCJ-dt-U7v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ar-ja-hR4">
+                                        <rect key="frame" x="0.0" y="66" width="276" height="30"/>
+                                        <state key="normal" title="9. Serial 🏀,Async+Queue Qos 🎾 = 🏈"/>
+                                        <connections>
+                                            <action selector="buttonAsync2QueueWithEqualPriority:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wwu-Z0-AGp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4Y-Tu-rVZ">
+                                        <rect key="frame" x="0.0" y="99" width="283" height="30"/>
+                                        <state key="normal" title="10. Serial 🏀,Async+Queue Qos 🎾 &gt; 🏈"/>
+                                        <connections>
+                                            <action selector="buttonAsync2QueueWithDiffPriority:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g6y-7b-1u5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUr-o6-lVU">
+                                        <rect key="frame" x="0.0" y="132" width="174" height="30"/>
+                                        <state key="normal" title="3. Serial + sync + 1Queue"/>
+                                        <connections>
+                                            <action selector="buttonSerialSync1Queue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FlU-fb-UPC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCJ-YQ-glh">
+                                        <rect key="frame" x="0.0" y="165" width="177" height="30"/>
+                                        <state key="normal" title="4. Serial + sync + 2Queue"/>
+                                        <connections>
+                                            <action selector="buttonSerialSync2Queue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mls-F8-Wqc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGv-YY-SMs">
+                                        <rect key="frame" x="0.0" y="198" width="219" height="30"/>
+                                        <state key="normal" title="5. concurrent + async + 1Queue"/>
+                                        <connections>
+                                            <action selector="buttonConcurrentAsync1Queue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gYz-3r-QEs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bje-XF-V1m">
+                                        <rect key="frame" x="0.0" y="231" width="221" height="30"/>
+                                        <state key="normal" title="6. concurrent + async + 2Queue"/>
+                                        <connections>
+                                            <action selector="buttonConcurrentAsync2Queue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DwB-xI-W3H"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuC-bm-jKg">
+                                        <rect key="frame" x="0.0" y="264" width="209" height="30"/>
+                                        <state key="normal" title="7. concurrent + sync + 1Queue"/>
+                                        <connections>
+                                            <action selector="buttonConcurrentSync1Queue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5JX-eb-ogE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56z-pM-nmO">
+                                        <rect key="frame" x="0.0" y="297" width="213" height="30"/>
+                                        <state key="normal" title="8. concurrent + sync + 2Queue"/>
+                                        <connections>
+                                            <action selector="buttonConcurrentSync2Queue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="43i-DO-iwQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ney-3o-oaZ">
+                                        <rect key="frame" x="0.0" y="330" width="278" height="30"/>
+                                        <state key="normal" title="13. Global(concurrent) 🏀, Async:🎾,🏈"/>
+                                        <connections>
+                                            <action selector="buttonSetDispathQueueGlobal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Br3-f0-8cD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pag-Hn-aDO">
+                                        <rect key="frame" x="0.0" y="363" width="354" height="30"/>
+                                        <state key="normal" title="11. concurrent 🏀, Async+QueueConcurrent:🎾,🏈"/>
+                                        <connections>
+                                            <action selector="buttonAsync2QueueWithConcurrentEqualPriority:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zj3-lk-IyB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wry-0w-u0O">
+                                        <rect key="frame" x="0.0" y="396" width="186" height="30"/>
+                                        <state key="normal" title="12. Main 🏀, Async ,🎾,🏈"/>
+                                        <connections>
+                                            <action selector="buttonSetDispathQueueMain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MOq-Xg-g5c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="peh-Oe-uFW" firstAttribute="centerX" secondItem="88F-gM-er7" secondAttribute="centerX" id="UzO-FT-rtT"/>
+                            <constraint firstItem="peh-Oe-uFW" firstAttribute="centerY" secondItem="88F-gM-er7" secondAttribute="centerY" id="YPk-3e-eB1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
